@@ -1,7 +1,11 @@
 const playpause = document.querySelector('.playpause');
+const playpause_btn = document.querySelector('.button')
+const bg_zone = document.querySelector('.bg')
+
 let firstScriptTag = document.getElementsByTagName('script')[0];
 let tag = document.createElement('script');
 let player;
+let darkmode = true
 
 
 function onYouTubePlayerAPIReady() {
@@ -23,26 +27,22 @@ function switchVideoState() {
   }
 }
 
-(function setDarkMode() {
-  const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  switch (isDarkMode) {
-    case true:
-      document.body.style.backgroundColor = "black"
-      break
-    case false:
-      document.body.style.backgroundColor = "white"
-      break
-    default:
-      break
-  }
-})()
-
-tag.src = "https://www.youtube.com/player_api";
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
 playpause.addEventListener('click', () => {
   switchVideoState()
   playpause.classList.toggle('playing');
 });
 
+bg_zone.addEventListener('dblclick', () => {
+  if (darkmode == true) {
+    bg_zone.style.backgroundColor = "#FFFFFF"
+    playpause_btn.style.backgroundColor = "#191919"
+    darkmode = false
+  } else {
+    bg_zone.style.backgroundColor = "#191919"
+    playpause_btn.style.backgroundColor = "#f0f0f0"
+    darkmode = true
+  }
+})
 
+tag.src = "https://www.youtube.com/player_api";
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);

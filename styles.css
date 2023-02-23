@@ -6,18 +6,19 @@ body {
     display: none;
 }
 
+.bg {
+    height: 1000px;
+    background-color: #191919;
+}
+
 .container {
-    padding: 40px;
-    background-color: rgb(80, 80, 103);
-    border-radius: 70px;
+    padding-top: 100px;
+    margin: auto;
     height: 100px;
     width: 120px;
 }
 
 .playpause {
-        
-    
-    margin: 0 auto;
     width: 100px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
@@ -25,7 +26,6 @@ body {
 
 
 .playpause .button {
-    margin-left: 10px;
     width: 80px;
     height: 80px;
     background: #f0f0f0;
