@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+#video-player {
+    display: none;
+}
+
+.container {
+    padding: 40px;
+    background-color: rgb(80, 80, 103);
+    border-radius: 70px;
+    height: 100px;
+    width: 120px;
+}
+
+.playpause {
+        
+    
+    margin: 0 auto;
+    width: 100px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+
+.playpause .button {
+    margin-left: 10px;
+    width: 80px;
+    height: 80px;
+    background: #f0f0f0;
+    transition: inherit;
+    clip-path: polygon(0 0, 50% 25%, 50% 75%, 50% 75%, 50% 25%, 100% 50%, 100% 50%, 0 100%);
+}
+
+.playpause.playing .button {
+    clip-path: polygon(0 0, 40% 0, 40% 100%, 60% 100%, 60% 0, 100% 0, 100% 100%, 0 100%);
+}
