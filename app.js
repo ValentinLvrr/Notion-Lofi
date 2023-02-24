@@ -31,17 +31,18 @@ playpause.addEventListener('click', () => {
   playpause.classList.toggle('playing');
 });
 
-document.addEventListener('keyup', () => {
-  console.log("clicked")
-  if (darkmode == true) {
-    body.style.backgroundColor = "#FFFFFF"
-    playpause_btn.style.backgroundColor = "#191919"
-    darkmode = false
-  } else {
-    body.style.backgroundColor = "#191919"
-    playpause_btn.style.backgroundColor = "#f0f0f0"
-    darkmode = true
-  }
+document.addEventListener('keyup', (event) => {
+  if (event.key.length === 1) {
+    if (darkmode == true) {
+      body.style.backgroundColor = "#FFFFFF"
+      playpause_btn.style.backgroundColor = "#191919"
+      darkmode = false
+    } else {
+      body.style.backgroundColor = "#191919"
+      playpause_btn.style.backgroundColor = "#f0f0f0"
+      darkmode = true
+    }
+  } 
 })
 
 tag.src = "https://www.youtube.com/player_api";
