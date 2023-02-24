@@ -1,14 +1,7 @@
 body {
     margin: 0;
-}
-
-#video-player {
-    display: none;
-}
-
-.bg {
-    height: 1000px;
-    background-color: #191919;
+    background-color: #FFFFFF;
+    transition: 0.3s ease;
 }
 
 .container {
@@ -21,14 +14,13 @@ body {
 .playpause {
     width: 100px;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
+    transition: 0.3s ease;
 }
-
 
 .playpause .button {
     width: 80px;
     height: 80px;
-    background: #f0f0f0;
+    background: #191919;
     transition: inherit;
     clip-path: polygon(0 0, 50% 25%, 50% 75%, 50% 75%, 50% 25%, 100% 50%, 100% 50%, 0 100%);
 }
@@ -36,3 +28,11 @@ body {
 .playpause.playing .button {
     clip-path: polygon(0 0, 40% 0, 40% 100%, 60% 100%, 60% 0, 100% 0, 100% 100%, 0 100%);
 }
+
+#video-player {
+    display: none;
+}
+
+
+
+

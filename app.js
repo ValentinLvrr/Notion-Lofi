@@ -1,11 +1,10 @@
+const firstScriptTag = document.getElementsByTagName('script')[0];
 const playpause = document.querySelector('.playpause');
 const playpause_btn = document.querySelector('.button')
-const bg_zone = document.querySelector('.bg')
-
-let firstScriptTag = document.getElementsByTagName('script')[0];
-let tag = document.createElement('script');
+const body = document.querySelector('body')
+const tag = document.createElement('script');
+let darkmode = false
 let player;
-let darkmode = true
 
 
 function onYouTubePlayerAPIReady() {
@@ -32,13 +31,14 @@ playpause.addEventListener('click', () => {
   playpause.classList.toggle('playing');
 });
 
-bg_zone.addEventListener('dblclick', () => {
+document.addEventListener('keyup', () => {
+  console.log("clicked")
   if (darkmode == true) {
-    bg_zone.style.backgroundColor = "#FFFFFF"
+    body.style.backgroundColor = "#FFFFFF"
     playpause_btn.style.backgroundColor = "#191919"
     darkmode = false
   } else {
-    bg_zone.style.backgroundColor = "#191919"
+    body.style.backgroundColor = "#191919"
     playpause_btn.style.backgroundColor = "#f0f0f0"
     darkmode = true
   }
